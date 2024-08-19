@@ -1,7 +1,8 @@
 package entity
 
 import (
-	"fmt"
+	"errors"
+
 	"github.com/itsreg-auth/internal/domain/value"
 )
 
@@ -10,6 +11,8 @@ type User struct {
 	Email        value.Email
 	PasswordHash value.PasswordHash
 }
+
+var ErrDefaultUserId = errors.New("default zero user id")
 
 // NewUserFromDB Constructor for creating a user from the database
 func NewUserFromDB(id value.UserId, email value.Email, passwordHash value.PasswordHash) (User, error) {
@@ -44,7 +47,7 @@ func NewUserRegistration(email value.Email, password value.Password) (User, erro
 
 func SetUserId(user User, id value.UserId) (User, error) {
 	if user.Id != value.UnknownUserId {
-		return User{}, fmt.Errorf("id for user already exist")
+		return User{}, ErrDefaultUserId
 	}
 	user.Id = id
 	return user, nil

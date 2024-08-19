@@ -27,7 +27,7 @@ func ValidatePassword(password Password) error {
 func GetPasswordHash(password Password) (PasswordHash, error) {
 	passwordHash, err := bcrypt.GenerateFromPassword([]byte(password), bcrypt.DefaultCost)
 	if err != nil {
-		return []byte{}, fmt.Errorf("failed to get password hash %w", err)
+		return []byte{}, fmt.Errorf("failed to get password hash: %w", err)
 	}
 	return passwordHash, nil
 }
@@ -38,5 +38,9 @@ func CompareHashAndPassword(hash PasswordHash, password Password) (bool, error) 
 	if errors.Is(err, bcrypt.ErrMismatchedHashAndPassword) {
 		return false, nil
 	}
+	if err != nil {
+		return false, fmt.Errorf("failed compare hash and password: %w", err)
+	}
+
 	return true, nil
 }
