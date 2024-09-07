@@ -1,0 +1,59 @@
+services:
+  auth-http:
+    container_name: ir-auth-http
+    build:
+      context: ../
+      args:
+        SERVICE: http
+    volumes:
+      - ../.go/pkg:/go/pkg
+      - ../.go-cache:/go-cache
+    environment:
+      GOCACHE: /go-cache
+    ports:
+      - 8500:$PORT
+    env_file:
+      - ../.env
+    depends_on:
+      auth-db:
+        condition: service_healthy
+        restart: true
+    networks:
+      - ir-web-auth
+
+  auth-db:
+    image: postgres:15.3-alpine3.18
+    container_name: ir-auth-postgres
+    command: postgres
+    ports:
+      - 30002:5432
+    env_file:
+      - ../.env
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U $POSTGRES_USER -d $POSTGRES_DB" ]
+      interval: 5s
+      retries: 5
+      start_period: 10s
+      timeout: 10s
+    networks:
+      ir-web-auth:
+        aliases:
+          - db
+
+  auth-migrate:
+    image: migrate/migrate
+    container_name: ir-auth-migrate
+    networks:
+      - ir-web-auth
+    volumes:
+      - ../migrations:/migrations
+    env_file:
+      - ../.env
+    command: [ "-path", "/migrations", "-database", "$DATABASE_URI", "up" ]
+    depends_on:
+      auth-db:
+        condition: service_healthy
+
+networks:
+  ir-web-auth:
+    driver: bridge
