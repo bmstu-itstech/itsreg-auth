@@ -23,3 +23,6 @@ go.work.sum
 
 # .idea project files
 .idea
+
+# .env file
+.env
