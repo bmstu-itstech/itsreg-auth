@@ -25,3 +25,24 @@ jobs:
         with:
           name: Go-results
           path: test-results.json
+  deploy:
+    name: "Deploy auth service"
+    needs: "test"
+    runs-on: "ubuntu-latest"
+    environment: production
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+      - name: Deploy
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ vars.SSH_HOST }}
+          username: ${{ vars.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script_stop: true
+          script: |
+            cd ${{ vars.PROJECT_DIR }}
+            docker compose --env-file=.env -f deployment/docker-compose.prod.yaml down
+            git stash
+            git checkout main
+            git pull origin main
+            docker compose --env-file=.env -f deployment/docker-compose.prod.yaml up --build -d
