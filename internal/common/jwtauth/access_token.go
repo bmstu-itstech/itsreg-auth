@@ -9,7 +9,7 @@ import (
 
 type accessTokenClaims struct {
 	jwt.RegisteredClaims
-	UserUUID string
+	UserUUID string `json:"user_uuid"`
 }
 
 type AccessTokenPayload struct {
