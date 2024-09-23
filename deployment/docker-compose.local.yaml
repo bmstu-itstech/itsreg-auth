@@ -4,7 +4,7 @@ services:
     container_name: ir-auth-postgres
     command: postgres
     ports:
-      - 30002:5432
+      - "30002:5432"
     environment:
       POSTGRES_DB: test-db
       POSTGRES_USER: test-user

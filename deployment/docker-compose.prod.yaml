@@ -5,19 +5,13 @@ services:
       context: ../
       args:
         SERVICE: http
-    volumes:
-      - ../.go/pkg:/go/pkg
-      - ../.go-cache:/go-cache
-    environment:
-      GOCACHE: /go-cache
     ports:
-      - 8500:$PORT
+      - 8500:${PORT:-8500}
     env_file:
       - ../.env
     depends_on:
       auth-db:
         condition: service_healthy
-        restart: true
     networks:
       - ir-web-auth
 
@@ -26,7 +20,7 @@ services:
     container_name: ir-auth-postgres
     command: postgres
     ports:
-      - 30002:5432
+      - "54322:5432"
     env_file:
       - ../.env
     healthcheck:
