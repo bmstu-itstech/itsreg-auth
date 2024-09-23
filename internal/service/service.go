@@ -6,15 +6,15 @@ import (
 
 	"github.com/jmoiron/sqlx"
 
-	"github.com/itsreg-auth/internal/app"
-	"github.com/itsreg-auth/internal/app/command"
-	"github.com/itsreg-auth/internal/app/query"
-	"github.com/itsreg-auth/internal/common/decorator"
-	"github.com/itsreg-auth/internal/common/logs"
-	"github.com/itsreg-auth/internal/common/metrics"
-	"github.com/itsreg-auth/internal/domain/auth"
-	"github.com/itsreg-auth/internal/infra"
-	"github.com/itsreg-auth/internal/service/mocks"
+	"github.com/bmstu-itstech/itsreg-auth/internal/app"
+	"github.com/bmstu-itstech/itsreg-auth/internal/app/command"
+	"github.com/bmstu-itstech/itsreg-auth/internal/app/query"
+	"github.com/bmstu-itstech/itsreg-auth/internal/common/decorator"
+	"github.com/bmstu-itstech/itsreg-auth/internal/common/logs"
+	"github.com/bmstu-itstech/itsreg-auth/internal/common/metrics"
+	"github.com/bmstu-itstech/itsreg-auth/internal/domain/auth"
+	"github.com/bmstu-itstech/itsreg-auth/internal/infra"
+	"github.com/bmstu-itstech/itsreg-auth/internal/service/mocks"
 )
 
 type Cleanup func()

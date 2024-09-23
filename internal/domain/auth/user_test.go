@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/itsreg-auth/internal/domain/auth"
+	"github.com/bmstu-itstech/itsreg-auth/internal/domain/auth"
 )
 
 func TestUser_MatchPassword(t *testing.T) {

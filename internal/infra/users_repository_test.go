@@ -12,8 +12,8 @@ import (
 	"github.com/jmoiron/sqlx"
 	"github.com/stretchr/testify/require"
 
-	"github.com/itsreg-auth/internal/domain/auth"
-	"github.com/itsreg-auth/internal/infra"
+	"github.com/bmstu-itstech/itsreg-auth/internal/domain/auth"
+	"github.com/bmstu-itstech/itsreg-auth/internal/infra"
 )
 
 func TestPgUsersRepository(t *testing.T) {

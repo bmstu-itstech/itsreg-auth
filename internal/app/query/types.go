@@ -3,7 +3,7 @@ package query
 import (
 	"time"
 
-	"github.com/itsreg-auth/internal/domain/auth"
+	"github.com/bmstu-itstech/itsreg-auth/internal/domain/auth"
 )
 
 type Empty struct{}

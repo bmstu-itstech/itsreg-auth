@@ -9,7 +9,7 @@ import (
 	"github.com/jmoiron/sqlx"
 	"github.com/zhikh23/pgutils"
 
-	"github.com/itsreg-auth/internal/domain/auth"
+	"github.com/bmstu-itstech/itsreg-auth/internal/domain/auth"
 )
 
 type pgUserRepository struct {

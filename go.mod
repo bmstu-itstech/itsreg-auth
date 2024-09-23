@@ -1,4 +1,4 @@
-module github.com/itsreg-auth
+module github.com/bmstu-itstech/itsreg-auth
 
 go 1.22.5
 

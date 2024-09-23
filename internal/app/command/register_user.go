@@ -4,8 +4,8 @@ import (
 	"context"
 	"log/slog"
 
-	"github.com/itsreg-auth/internal/common/decorator"
-	"github.com/itsreg-auth/internal/domain/auth"
+	"github.com/bmstu-itstech/itsreg-auth/internal/common/decorator"
+	"github.com/bmstu-itstech/itsreg-auth/internal/domain/auth"
 )
 
 type RegisterUser struct {

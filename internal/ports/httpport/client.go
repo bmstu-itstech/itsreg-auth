@@ -2,8 +2,8 @@ package httpport
 
 import (
 	"context"
+	"github.com/bmstu-itstech/itsreg-auth/internal/common/client/auth"
 	"github.com/go-chi/render"
-	"github.com/itsreg-auth/internal/common/client/auth"
 	"net/http"
 )
 

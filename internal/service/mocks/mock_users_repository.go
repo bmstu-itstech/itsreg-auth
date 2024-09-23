@@ -4,7 +4,7 @@ import (
 	"context"
 	"sync"
 
-	"github.com/itsreg-auth/internal/domain/auth"
+	"github.com/bmstu-itstech/itsreg-auth/internal/domain/auth"
 )
 
 type mockUserRepository struct {

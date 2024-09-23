@@ -5,9 +5,9 @@ import (
 
 	"github.com/go-chi/chi/v5"
 
-	"github.com/itsreg-auth/internal/common/server"
-	"github.com/itsreg-auth/internal/ports/httpport"
-	"github.com/itsreg-auth/internal/service"
+	"github.com/bmstu-itstech/itsreg-auth/internal/common/server"
+	"github.com/bmstu-itstech/itsreg-auth/internal/ports/httpport"
+	"github.com/bmstu-itstech/itsreg-auth/internal/service"
 )
 
 func main() {

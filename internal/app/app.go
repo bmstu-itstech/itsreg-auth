@@ -1,8 +1,8 @@
 package app
 
 import (
-	"github.com/itsreg-auth/internal/app/command"
-	"github.com/itsreg-auth/internal/app/query"
+	"github.com/bmstu-itstech/itsreg-auth/internal/app/command"
+	"github.com/bmstu-itstech/itsreg-auth/internal/app/query"
 )
 
 type Application struct {

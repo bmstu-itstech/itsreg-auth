@@ -6,7 +6,7 @@ import (
 
 	"golang.org/x/crypto/bcrypt"
 
-	"github.com/itsreg-auth/internal/common/commonerrs"
+	"github.com/bmstu-itstech/itsreg-auth/internal/common/commonerrs"
 )
 
 type User struct {

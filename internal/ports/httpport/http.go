@@ -8,12 +8,12 @@ import (
 
 	"github.com/go-chi/render"
 
-	"github.com/itsreg-auth/internal/app"
-	"github.com/itsreg-auth/internal/app/command"
-	"github.com/itsreg-auth/internal/app/query"
-	"github.com/itsreg-auth/internal/common/commonerrs"
-	"github.com/itsreg-auth/internal/common/jwtauth"
-	"github.com/itsreg-auth/internal/domain/auth"
+	"github.com/bmstu-itstech/itsreg-auth/internal/app"
+	"github.com/bmstu-itstech/itsreg-auth/internal/app/command"
+	"github.com/bmstu-itstech/itsreg-auth/internal/app/query"
+	"github.com/bmstu-itstech/itsreg-auth/internal/common/commonerrs"
+	"github.com/bmstu-itstech/itsreg-auth/internal/common/jwtauth"
+	"github.com/bmstu-itstech/itsreg-auth/internal/domain/auth"
 )
 
 const (
