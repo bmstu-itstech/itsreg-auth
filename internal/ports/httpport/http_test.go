@@ -3,19 +3,21 @@ package httpport_test
 import (
 	"context"
 	"fmt"
-	"github.com/bmstu-itstech/itsreg-auth/internal/common/jwtauth"
-	"github.com/bmstu-itstech/itsreg-auth/internal/common/server"
-	"github.com/bmstu-itstech/itsreg-auth/internal/common/tests"
-	"github.com/bmstu-itstech/itsreg-auth/internal/ports/httpport"
-	"github.com/bmstu-itstech/itsreg-auth/internal/service"
-	"github.com/brianvoe/gofakeit/v6"
-	"github.com/go-chi/chi/v5"
-	"github.com/stretchr/testify/require"
 	"log"
 	"net/http"
 	"os"
 	"testing"
 	"time"
+
+	"github.com/brianvoe/gofakeit/v6"
+	"github.com/go-chi/chi/v5"
+	"github.com/stretchr/testify/require"
+
+	"github.com/bmstu-itstech/itsreg-auth/internal/common/jwtauth"
+	"github.com/bmstu-itstech/itsreg-auth/internal/common/server"
+	"github.com/bmstu-itstech/itsreg-auth/internal/common/tests"
+	"github.com/bmstu-itstech/itsreg-auth/internal/ports/httpport"
+	"github.com/bmstu-itstech/itsreg-auth/internal/service"
 )
 
 func TestAuthHTTP(t *testing.T) {

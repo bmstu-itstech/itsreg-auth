@@ -2,9 +2,11 @@ package httpport
 
 import (
 	"context"
-	"github.com/bmstu-itstech/itsreg-auth/internal/common/client/auth"
-	"github.com/go-chi/render"
 	"net/http"
+
+	"github.com/go-chi/render"
+
+	"github.com/bmstu-itstech/itsreg-auth/api/openapi/clients/auth"
 )
 
 type HTTPAuthClient struct {

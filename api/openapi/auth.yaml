@@ -4,11 +4,11 @@ info:
   description: ITS Reg Auth
   version: 1.0.0
 servers:
-  - url: 'http://{hostname}/api'
+  - url: 'http://{hostname}:8500/api'
     variables:
       hostname:
         default:
-          localhost:8500
+          localhost
 
 paths:
   /register:
